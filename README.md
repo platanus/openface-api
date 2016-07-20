@@ -1,12 +1,12 @@
-## Openface-API
+# Openface-API
 By [Platanus](http://platan.us)
 
 Openface-api is a web API that compares faces on 2 given pictures, and gives back their distance (measure of unsimilarity).  This is useful to check if both pictures belong to the same person.  It was developed for KSEC project, but can serve general purposes.
 
-# Implementation
+## Implementation
 Openface-api is a Python [Flask](http://flask.pocoo.org/) application, with a face-comparing script based on [Openface](https://cmusatyalab.github.io/openface/) face recognition library.
 
-# Installation
+## Installation
 In order to get started, the following must be done:
 
 1. Install Openface https://cmusatyalab.github.io/openface/setup/
@@ -15,7 +15,7 @@ In order to get started, the following must be done:
 
 After everything is setup, you should be able to run flask 
 
-# Usage
+## Usage
 
 A route is provided to check if the server is up:  HTTP GET `/status/`
 
