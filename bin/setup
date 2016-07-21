@@ -1,0 +1,13 @@
+#!/bin/sh
+
+# Exit if any subcommand fails
+set -e
+
+# Set up Ruby dependencies via Bundler
+pip install -r requirements.txt
+
+# Add binstubs to PATH via export PATH=".git/safe/../../bin:$PATH" in ~/.zshenv
+mkdir -p .git/safe
+
+# Setup heroku remotes
+bin/setup_heroku
