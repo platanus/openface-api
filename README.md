@@ -36,7 +36,7 @@ A route is provided to check if the server is up:  HTTP GET `/status/`
 
 The API route is `/compare/`.  Expects HTTP POST with the params `img1` and `img2` as the urls of both pictures with faces to compare.  Returns a json object with the computed distance: `{distance: 0.1752}`
 
-Then you can define your own distance threshold in order to evaluate if both pictures belong to the same person.  Reasonable values are around 0.5.  So any value higher than that means both faces are not from the same person.
+Then you can define your own distance threshold in order to evaluate if both pictures belong to the same person.  Reasonable values are around 0 - 0.005.  So any value higher than that means both faces are not from the same person.
 
 Additionaly, it is possible to run the distance comparer locally in the server, executing in the terminal `python local_exe.py <img1> <img2>
 
