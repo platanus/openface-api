@@ -1,0 +1,5 @@
+virtualenv/*
+*.bz2
+*.pyc
+*.dat
+*.t7

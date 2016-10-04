@@ -13,7 +13,22 @@ In order to get started, the following must be done:
 2. Install and setup Flask (probably with `sudo pip install Flask`).  Remember to set up FLASK_APP env var
 3. Download and copy to root folder the following files: [shape_predictor_68_face_landmarks.dat](http://dlib.net/files/shape_predictor_68_face_landmarks.dat.bz2) (extract before copying) and [nn4.small2.v1.t7](http://openface-models.storage.cmusatyalab.org/nn4.small2.v1.t7) (just copy)
 
-After everything is setup, you should be able to run flask 
+After everything is setup, you should be able to run flask
+
+## Setup
+
+Run this to setup you environment
+
+```
+virtualenv venv #only the first time
+venv/bin/activate
+```
+
+To setup python dependencies and heroku run
+
+```
+bin/setup
+```
 
 ## Usage
 
@@ -24,3 +39,20 @@ The API route is `/compare/`.  Expects HTTP POST with the params `img1` and `img
 Then you can define your own distance threshold in order to evaluate if both pictures belong to the same person.  Reasonable values are around 0.5.  So any value higher than that means both faces are not from the same person.
 
 Additionaly, it is possible to run the distance comparer locally in the server, executing in the terminal `python local_exe.py <img1> <img2>
+
+## Deploy on Heroku
+
+To deploy on heroku we will use the beta support for docker. You will need docker to build a new deployment locally.
+
+Install the heroku container plugin
+
+    heroku plugins:install heroku-container-registry
+
+Login to the heroku container registry
+
+    heroku container:login
+
+Deploy the container
+
+    heroku container:push web
+    heroku container:push web --remote production
